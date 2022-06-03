@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -13,29 +12,23 @@ public class MenuUIHandler : MonoBehaviour
     public GameObject mainMenu;
     public GameObject optionsMenu;
     public GameObject chooseCharacterMenu;
+    public AudioClip clickySound;
+    public AudioSource audioSource;
 
-    public TMP_InputField enterNameField;
-    public TextMeshProUGUI topScorerText;
-
-    public MenuUIHandler MN;
-
-    private void Awake()
+    private void Start()
     {
-        if (MN != null)
-        {
-            Destroy(gameObject);
-        }
-        MN = this;
-        DontDestroyOnLoad(MN);
+        audioSource = GetComponent<AudioSource>();
     }
     public void PlayButtonAtMainMenu()
     {
+        audioSource.PlayOneShot(clickySound, 0.8f);
         mainMenu.SetActive(false);
         chooseCharacterMenu.SetActive(true);
     }
 
     public void OptionsButton()
     {
+        audioSource.PlayOneShot(clickySound, 0.8f);
         mainMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }
@@ -43,26 +36,31 @@ public class MenuUIHandler : MonoBehaviour
     public void ExitButton()
     {
 #if UNITY_EDITOR
+        audioSource.PlayOneShot(clickySound, 0.8f);
         EditorApplication.ExitPlaymode();
-#else
+#else   
+        audioSource.PlayOneShot(clickySound, 0.8f);
         Application.Quit();
 #endif
     }
 
     public void ReturnInOptions()
     {
+        audioSource.PlayOneShot(clickySound, 0.8f);
         optionsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 
     public void ReturnInChooseCharacter()
     {
+        audioSource.PlayOneShot(clickySound, 0.8f);
         chooseCharacterMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 
     public void PlayInChooseCharacter()
     {
+        audioSource.PlayOneShot(clickySound, 0.8f);
         SceneManager.LoadScene(1);
     }
 }
