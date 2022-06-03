@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: Low
+  m_Name: Medium
   m_EditorClassIdentifier: 
   k_AssetVersion: 9
   k_AssetPreviousVersion: 9
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
-  - {fileID: 11400000, guid: c62cdddfb7b6e2f41881ab7c4c127132, type: 2}
+  - {fileID: 11400000, guid: 54fcc34d73c702e4ea14fd5daa6a4d6d, type: 2}
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
@@ -26,11 +26,11 @@ MonoBehaviour:
   m_StoreActionsOptimization: 0
   m_SupportsHDR: 0
   m_MSAA: 1
-  m_RenderScale: 0.32
+  m_RenderScale: 0.5
   m_UpscalingFilter: 0
   m_FsrOverrideSharpness: 0
   m_FsrSharpness: 0.92
-  m_MainLightRenderingMode: 0
+  m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 2048
   m_AdditionalLightsRenderingMode: 1
