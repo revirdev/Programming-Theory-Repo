@@ -144,11 +144,11 @@ GameObject:
   - component: {fileID: 7185156136760822438}
   m_Layer: 6
   m_Name: WickJohn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7185156136760822438
 Transform:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7185156136760822437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -577,9 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49381898ed3cafc4d96ce73b07cf2b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  range: 300
-  fireRate: 15
   hitParticle: {fileID: 2442386619275495555, guid: 0a1c5f12ca683fd458a2e836f55d9c55, type: 3}
   shootingSound: {fileID: 8300000, guid: 232244b6a8d04ca44a216ad1deccbf26, type: 3}
   impactForce: 60
