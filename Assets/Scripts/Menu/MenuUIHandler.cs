@@ -67,7 +67,7 @@ public class MenuUIHandler : MonoBehaviour
 
     IEnumerator Loading()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(1);
     }
 }
