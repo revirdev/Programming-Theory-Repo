@@ -23,10 +23,10 @@ public class BabarianMovement : PlayerMovement
         speed = babarianSpeed;
         jumpHeight = babarianJumpHeight;
         sprintSpeed = babarianSprintingSpeed;
-        /*if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(20);
-        }*/
+        }
         base.PlayerMove();
     }
 
