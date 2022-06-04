@@ -1461,9 +1461,13 @@ GameObject:
   - component: {fileID: 4972723599130171459}
   - component: {fileID: 1207538504}
   - component: {fileID: 1207538505}
+<<<<<<< HEAD
   - component: {fileID: 1207538510}
   - component: {fileID: 1207538515}
   - component: {fileID: 1207538516}
+=======
+  - component: {fileID: 3177283420767169089}
+>>>>>>> parent of eed26fd (backup)
   m_Layer: 0
   m_Name: LowPolySkeleton
   m_TagString: Enemy
@@ -1538,6 +1542,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48962402, y: 1.2531967, z: 0.19833985}
   m_Center: {x: -0.011413574, y: 0.5938835, z: 0.031445313}
+<<<<<<< HEAD
 --- !u!114 &1207538510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1557,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
 --- !u!195 &1207538515
+=======
+--- !u!195 &3177283420767169089
+>>>>>>> parent of eed26fd (backup)
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1561,7 +1569,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
+<<<<<<< HEAD
   m_Speed: 3.5
+=======
+  m_Speed: 11
+>>>>>>> parent of eed26fd (backup)
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1573,6 +1585,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+<<<<<<< HEAD
 --- !u!114 &1207538516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1602,6 +1615,8 @@ MonoBehaviour:
   edgeIterations: 4
   edgeDistance: 0.5
   waypoints: []
+=======
+>>>>>>> parent of eed26fd (backup)
 --- !u!1 &8569649574974592577
 GameObject:
   m_ObjectHideFlags: 0
