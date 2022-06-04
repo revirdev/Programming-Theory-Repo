@@ -12,6 +12,7 @@ public class MenuUIHandler : MonoBehaviour
     public GameObject mainMenu;
     public GameObject optionsMenu;
     public GameObject chooseCharacterMenu;
+
     public AudioClip clickySound;
     public AudioSource audioSource;
 
@@ -61,6 +62,12 @@ public class MenuUIHandler : MonoBehaviour
     public void PlayInChooseCharacter()
     {
         audioSource.PlayOneShot(clickySound, 0.8f);
+        StartCoroutine(Loading());
+    }
+
+    IEnumerator Loading()
+    {
+        yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene(1);
     }
 }

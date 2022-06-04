@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WickJohnWeapon : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 300f;
-    public float fireRate = 12f;
+    protected float damage = 10f;
+    protected float range = 300f;
+    protected float fireRate = 12f;
 
     public GameObject hitParticle;
     public AudioClip shootingSound;
@@ -17,17 +17,22 @@ public class WickJohnWeapon : MonoBehaviour
     public Camera fpsCam;
     private void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (PauseMenu.GameIsPause == false)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
         }
     }
 
     public void Shoot()
     {
         AudioSource ac = GetComponent<AudioSource>();
-        ac.PlayOneShot(shootingSound, 0.5f);
+        Animator anim = GetComponent<Animator>();
+        anim.SetTrigger("shoot");
+        ac.PlayOneShot(shootingSound, 0.3f);
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

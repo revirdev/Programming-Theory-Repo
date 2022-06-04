@@ -13,13 +13,16 @@ public class BabarianWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!PauseMenu.GameIsPause)
         {
-            if (CanAttack)
+            if (Input.GetMouseButtonDown(0))
             {
-                AxeAttack();
+                if (CanAttack)
+                {
+                    AxeAttack();
+                }
             }
-        }
+        } 
     }
 
     public void AxeAttack()
