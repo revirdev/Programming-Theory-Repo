@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] AudioClip clickySound;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject story;
+    [SerializeField] GameObject healthBar;
 
     public void SavePlayer()
     {
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        StartCoroutine(WatchStory());
         LoadPlayer();
         LoadPlayerMenu();
     }
@@ -46,5 +50,16 @@ public class Player : MonoBehaviour
     public void Update()
     {
         playerName = survivalText.text;
+    }
+
+    IEnumerator WatchStory()
+    {
+        healthBar.SetActive(false);
+        story.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+
+        story.SetActive(false);
+        healthBar.SetActive(true);
     }
 }
