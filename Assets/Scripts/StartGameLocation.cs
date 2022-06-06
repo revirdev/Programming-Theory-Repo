@@ -5,6 +5,14 @@ using UnityEngine;
 public class StartGameLocation : MonoBehaviour
 {
     int i = 0;
+    AudioSource ac;
+    public AudioClip enteringSound;
+    public GameObject Spawner;
+
+    private void Awake()
+    {
+        ac = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Touch " + other.name);
@@ -15,6 +23,7 @@ public class StartGameLocation : MonoBehaviour
     {
         if (i == 1)
         {
+            Spawner.SetActive(true);
             StartCoroutine(Play());
             i++;
         }    
@@ -22,7 +31,8 @@ public class StartGameLocation : MonoBehaviour
 
     IEnumerator Play()
     {
-        yield return new WaitForSeconds(3);
+        ac.PlayOneShot(enteringSound, 1f);
+        yield return new WaitForSeconds(4);
         Debug.Log("Play");
     }
 

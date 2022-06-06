@@ -6,10 +6,16 @@ public class BabarianWeapon : MonoBehaviour
 {
     public GameObject Axe;
     private bool CanAttack = true;
-    public float AttackCooldown = 1.0f;
+    public float AttackCooldown = 0.3f;
     public bool isAttacking = false;
-    public float damage = 20f;
+
+    public Camera fpsCam;
+    protected float range = 10f;
+    protected int damage = 150;
+    public float impactForce = 60f;
+
     public AudioClip AxeAttackSound;
+    public GameObject HitParticle;
 
     private void Update()
     {
@@ -33,8 +39,30 @@ public class BabarianWeapon : MonoBehaviour
         anim.SetTrigger("Attack");
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(AxeAttackSound, 0.5f);
-        StartCoroutine(ResetAttackCoolDown());
         
+        
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+
+            Debug.Log(hit.transform.name);
+
+            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            //enemy.GetComponent<Animator>().SetTrigger("Hit");
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+
+            if (hit.rigidbody != null)
+            {
+                hit.rigidbody.AddForce(-hit.normal * impactForce);
+            }
+            GameObject hitGO = Instantiate(HitParticle, hit.point, Quaternion.LookRotation(hit.normal));
+            
+            Destroy(hitGO, 1.5f);
+        }
+        StartCoroutine(ResetAttackCoolDown());
     }
 
     IEnumerator ResetAttackCoolDown()
@@ -46,7 +74,7 @@ public class BabarianWeapon : MonoBehaviour
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         isAttacking = false;
     }
 }
