@@ -25,9 +25,9 @@ public class SettingMenu : MenuUIHandler
     List<int> heights = new List<int>() { 720, 900, 1080 };
     private void Start()
     {
-        AudioListener.volume = volumeSlider.value;
         DefaultVolume();
         DefaultQuality();
+        AudioListener.volume = volumeSlider.value;
     }
 
     public void SetScreenSize(int index)
@@ -97,7 +97,7 @@ public class SettingMenu : MenuUIHandler
 
     public void LoadVolume()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume", volumeSlider.value);
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume", 0.8f);
     }
     public void SaveVolume()
     {

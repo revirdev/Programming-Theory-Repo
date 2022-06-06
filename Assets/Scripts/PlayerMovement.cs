@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     
     private float m_Speed = 3.0f;
+    // [ENCAPSULATION]
     protected float speed
     {
         get { return m_Speed; }
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    // [POLYMORPHISM]
     protected void PlayerMove()
     {
         // Check if player is on the ground and set isGrounded to TRUE

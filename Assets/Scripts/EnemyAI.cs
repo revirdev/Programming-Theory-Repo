@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiTutorial : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public Transform player;
+    Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -29,12 +29,14 @@ public class EnemyAiTutorial : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        player = GameObject.Find("PlayerBodyToChase").transform;
+        
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
-    {
+    { 
+
+        player = GameObject.FindGameObjectWithTag("PlayerBody").transform;
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// [INHERITANCE]
 public class WickJohnMovement : PlayerMovement
 {
+    // [POLYMORPHISM]
     protected int WJMaxHealth = 250;
     public int currentHealth;
 
@@ -27,7 +28,15 @@ public class WickJohnMovement : PlayerMovement
         currentHealth = WJMaxHealth;
         healthBar.SetMaxHealth(WJMaxHealth);
     }
+
+    // [ABSTRACTION]
     private void Update()
+    {
+        PlayerMove();
+    }
+
+    // [POLYMORPHISM]
+    new void PlayerMove()
     {
         CheckGame();
         speed = WJSpeed;

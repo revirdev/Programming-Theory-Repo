@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// [INHERITANCE]
 public class BabarianMovement : PlayerMovement
 {
-    protected int babarianMaxHealth = 500;
+    // [POLYMORPHISM]
+    protected int babarianMaxHealth = 1500;
     public int currentHealth;
 
     public GameObject gameOverMenu;
@@ -21,6 +22,7 @@ public class BabarianMovement : PlayerMovement
 
     AudioSource ac;
 
+    // [ABSTRACTION]
     private void Start()
     {
         ac = GetComponent<AudioSource>();
@@ -28,6 +30,11 @@ public class BabarianMovement : PlayerMovement
         healthBar.SetMaxHealth(babarianMaxHealth);
     }
     private void Update()
+    {
+        PlayerMove();
+    }
+
+    new void PlayerMove()
     {
         CheckGame();
         speed = babarianSpeed;
